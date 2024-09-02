@@ -7,6 +7,16 @@ rails s
 ```
 npm run dev
 ```
+# ディレクトリ構造
+```
+laravel_next_docker
+    ├── api // APIドキュメント(Swagger)
+    ├── backend
+    │   └── Railsのソースコード
+    └── frontend
+        └──NUxt.jsソースコード
+```
+
 # Swagger
 
 - URL
