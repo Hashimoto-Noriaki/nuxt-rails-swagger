@@ -1,11 +1,15 @@
 class V1::UsersController < ApplicationController
   def index
-    users = User.all
+    users = if params[:uid] 
+      User.find_by(uid: params[:uid])
+     else 
+        User.all
+     end
     render json: users
   end
 
   def create
-    users = User.new(user_params)
+    user = User.new(user_params)
     if user.save
       render json: user
     else
