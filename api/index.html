@@ -1,13 +1,11 @@
-<!-- HTML for static distribution bundle build -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Swagger UI</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css" >
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@latest/swagger-ui.css">
     <style>
-      html
-      {
+      html {
         box-sizing: border-box;
         overflow: -moz-scrollbars-vertical;
         overflow-y: scroll;
@@ -15,30 +13,24 @@
 
       *,
       *:before,
-      *:after
-      {
+      *:after {
         box-sizing: inherit;
       }
 
-      body
-      {
+      body {
         margin:0;
         background: #fafafa;
       }
     </style>
   </head>
-
   <body>
     <div id="swagger-ui"></div>
-
-    <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"> </script>
-    <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"> </script>
+    <script src="https://unpkg.com/swagger-ui-dist@latest/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@latest/swagger-ui-standalone-preset.js"></script>
     <script>
     window.onload = function() {
-
-      // Build a system
       const ui = SwaggerUIBundle({
-        url: "https://Hashimoto-Noriaki.github.io/nuxt-rails-swagger/api/openapi.yml",
+        url: "https://your-github-pages-url/api/openapi.yml",  // GitHub Pages 上の YAML ファイルの URL
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
@@ -49,10 +41,10 @@
           SwaggerUIBundle.plugins.DownloadUrl
         ],
         layout: "StandaloneLayout"
-      })
+      });
 
-      window.ui = ui
+      window.ui = ui;
     }
-  </script>
+    </script>
   </body>
 </html>
